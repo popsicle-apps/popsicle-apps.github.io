@@ -1,0 +1,72 @@
+/* Popsicle Apps: shared styles for every page. No web fonts, no JavaScript, no tracking. */
+:root {
+  --bg: #f7f4ef;
+  --surface: #ffffff;
+  --text: #1f2a2c;
+  --muted: #5b6668;
+  --brand: #003a43;
+  --brand-ink: #ffffff;
+  --link: #00606d;
+  --border: #e3ddd3;
+  --max: 44rem;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0e1416;
+    --surface: #162022;
+    --text: #e8ecec;
+    --muted: #a3b0b2;
+    --brand: #071c20;
+    --brand-ink: #e8ecec;
+    --link: #7cc4cd;
+    --border: #26363a;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 1rem/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+a { color: var(--link); }
+a:focus-visible { outline: 3px solid var(--link); outline-offset: 2px; }
+.skip { position: absolute; left: -999px; }
+.skip:focus { left: 1rem; top: 1rem; background: var(--surface); padding: .5rem; }
+
+.site-header { background: var(--brand); color: var(--brand-ink); }
+.site-header .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .5rem 1.5rem; padding-block: 1rem; }
+.site-header a { color: var(--brand-ink); text-decoration: none; }
+.brand { font-weight: 700; font-size: 1.125rem; }
+.site-nav { display: flex; gap: 1.25rem; }
+.site-nav a { opacity: .9; }
+.site-nav a:hover, .site-nav a[aria-current="page"] { opacity: 1; text-decoration: underline; }
+
+.wrap { max-width: var(--max); margin: 0 auto; padding-inline: 1.25rem; }
+main { padding-block: 2rem 3rem; }
+h1 { font-size: 1.875rem; line-height: 1.2; margin: 0 0 .5rem; }
+h2 { font-size: 1.25rem; margin: 2rem 0 .5rem; }
+.lead { color: var(--muted); font-size: 1.125rem; margin-top: 0; }
+.meta { color: var(--muted); font-size: .9375rem; }
+.meta p { margin: .125rem 0; }
+
+.breadcrumb { font-size: .9375rem; color: var(--muted); margin-bottom: 1rem; }
+.breadcrumb a { color: var(--muted); }
+
+.app-card {
+  display: flex; gap: 1rem; align-items: center;
+  background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
+  padding: 1rem; margin: 1rem 0; text-decoration: none; color: inherit;
+}
+.app-card img { width: 64px; height: 64px; border-radius: 14px; flex: none; }
+.app-card h3 { margin: 0; font-size: 1.125rem; color: var(--text); }
+.app-card p { margin: .125rem 0 0; color: var(--muted); }
+.app-hero { display: flex; gap: 1rem; align-items: center; margin-bottom: 1rem; }
+.app-hero img { width: 88px; height: 88px; border-radius: 20px; }
+
+.callout { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1rem 1.25rem; }
+.email { font-weight: 600; word-break: break-all; }
+
+.site-footer { border-top: 1px solid var(--border); color: var(--muted); font-size: .9375rem; }
+.site-footer .wrap { padding-block: 1.5rem; display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; }
